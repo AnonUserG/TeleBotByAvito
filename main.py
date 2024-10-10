@@ -115,10 +115,10 @@ async def send_to_telegram(chat_id, messages, telegram_token, telegram_chat_id):
 
 
 if __name__ == "__main__":
-    access_token = "_u7D53CsRc-YXRaVhYGORwYavjUh7qnlpuGh0oIR"
-    user_id = 373140542
-    telegram_token = "8144752538:AAGwALUxXfN77RFEoSH9KMkZZDB_ClbE_NI"
-    telegram_chat_id = '-1002465274869'
+    access_token = ""
+    user_id =
+    telegram_token = ""
+    telegram_chat_id = ''
     chat_limit = 5
     message_limit = 15
 
