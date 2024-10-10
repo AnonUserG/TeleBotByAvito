@@ -79,6 +79,6 @@ def fetch_avito_data(access_token, user_id, chat_limit=5, message_limit=15):
 
 
 if __name__ == "__main__":
-    access_token = "_u7D53CsRc-YXRaVhYGORwYavjUh7qnlpuGh0oIR"
+    access_token = "xxxxxxxxxxxx"
     user_id = 373140542
     fetch_avito_data(access_token, user_id)
