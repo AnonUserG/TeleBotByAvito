@@ -1,7 +1,11 @@
+import os
 import asyncio
-
 import requests
 from telegram import Bot
+from dotenv import load_dotenv
+
+# Загружаем переменные из .env файла
+load_dotenv()
 
 async def fetch_avito_data(access_token, user_id, telegram_token, telegram_chat_id, chat_limit, message_limit):
     """
@@ -113,14 +117,14 @@ async def send_to_telegram(chat_id, messages, telegram_token, telegram_chat_id):
         print(f"Failed to send messages for chat ID {chat_id} to Telegram: {e}")
 
 
-
 if __name__ == "__main__":
-    access_token = ""
-    user_id =
-    telegram_token = ""
-    telegram_chat_id = ''
-    chat_limit = 5
-    message_limit = 15
+    # Получаем данные из переменных окружения
+    access_token = os.getenv("AVITO_ACCESS_TOKEN")
+    user_id = int(os.getenv("AVITO_USER_ID"))
+    telegram_token = os.getenv("TELEGRAM_TOKEN")
+    telegram_chat_id = os.getenv("TELEGRAM_CHAT_ID")
+    chat_limit = int(os.getenv("CHAT_LIMIT", 5))  # по умолчанию 5
+    message_limit = int(os.getenv("MESSAGE_LIMIT", 15))  # по умолчанию 15
 
+    # Запуск основного процесса
     asyncio.run(fetch_avito_data(access_token, user_id, telegram_token, telegram_chat_id, chat_limit, message_limit))
-
